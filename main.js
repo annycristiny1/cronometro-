@@ -23,7 +23,12 @@ let tempoAtual = new Date();
 const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
 
 contadores[0].textContent = calculaTempo(tempos[0]);
-contadores[1].textContent = calculaTempo(tempoObjetivo2);
+
+function atualizaCronometro(){
+    for (let i=0; i<contadores.length;i++){
+        contadores[i].textContent = calculaTempo(tempos[i]);   
+    }
+}
 
 function calculaTempo(tempoObjetivo) {
     let tempoAtual = new Date();
